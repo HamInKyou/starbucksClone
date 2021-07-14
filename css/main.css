@@ -15,6 +15,9 @@ img {
     */
   display: block;
 }
+a {
+  text-decoration: none;
+}
 
 /* HEADER */
 header {
@@ -36,4 +39,54 @@ header .logo {
   bottom: 0;
   left: 0;
   margin: auto 0;
+  display: none;
+}
+
+header .sub-menu {
+}
+
+header .sub-menu ul.menu {
+  font-family: Arial, sans-serif;
+  display: flex;
+}
+
+header .sub-menu ul.menu li {
+  position: relative;
+}
+header .sub-menu ul.menu li::before {
+  content: "";
+  width: 1px;
+  height: 12px;
+  background-color: #e5e5e5;
+  position: absolute; /*자동으로 해당 요소를 블럭으로 바꾼다.*/
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+header .sub-menu ul.menu li:first-child::before {
+  display: none;
+}
+
+header .sub-menu ul.menu li a {
+  /*
+    기본적으로 a 태그는 인라인 요소라서
+    마진과 패딩, 가로세로 값을 가질 수 없었다.
+    따라서 display: block을 해서 이 요소를 블럭으로 바꿔주자.
+  */
+  display: block;
+  font-size: 12px;
+  padding: 11px 16px;
+  color: #656565;
+}
+header .sub-menu ul.menu li a:hover {
+  color: #000000;
+}
+
+header .sub-menu .search {
+}
+
+header .sub-menu .search input {
+}
+
+header .sub-menu .search .material-icons {
 }
