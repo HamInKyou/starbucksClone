@@ -5,6 +5,7 @@ body {
   font-weight: 400; /*기본 폰트 두께*/
   line-height: 1.4; /*통상적인 줄높이, 글꼴마다 다르다.*/
   font-family: "Nanum Gothic", sans-serif;
+  height: 3000px;
 }
 img {
   /*
@@ -28,6 +29,14 @@ a {
 header {
   background-color: #f6f5f0;
   border-bottom: 1px solid #c8c8c8;
+  /*
+  fixed하면 viewport 기준으로 배치되기 때문에, 요소의 너비를 최소한으로 사용하려고 한다.
+  absolute도 마찬가지, 요소의 너비를 최소한으로 사용하려고 한다. 
+  명시적으로 꽉 차게 100%를 해줘야한다!
+  */
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 header > .inner {
@@ -201,4 +210,18 @@ header .main-menu .item .item__contents .contents__texture h4 {
 header .main-menu .item .item__contents .contents__texture p {
   color: #669900;
   margin: 4px 0 14px;
+}
+
+header .badges {
+  position: absolute;
+  top: 132px;
+  right: 12px;
+}
+
+header .badges .badge {
+  border-radius: 10px;
+  overflow: hidden; /*이미지 border-radius 적용하기 위해 넘쳐나는 부분 가리기*/
+  margin-bottom: 12px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 }
