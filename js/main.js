@@ -66,3 +66,10 @@ fadeEls.forEach((fadeEl, index) => {
     opacity: 1,
   });
 });
+
+//Swiper 클래스 생성자
+new Swiper(".notice-line .swiper-container", {
+  direction: "vertical",
+  autoplay: true,
+  loop: true,
+});
