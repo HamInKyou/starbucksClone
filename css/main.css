@@ -424,3 +424,30 @@ header .badges .badge {
 .notice .notice-line .inner__right .toggle-promotion .material-icons {
   font-size: 30px;
 }
+
+.notice .promotion {
+  height: 693px;
+  background-color: #f6f5ef;
+  position: relative;
+}
+
+.notice .promotion .swiper-container {
+  /*.swiper-slide 세개 보이고, 사이 10px씩 벌어진다 했을 때 총 container의 너비 계산*/
+  width: calc(819px * 3 + 20px);
+  height: 553px;
+  background-color: orange;
+  text-align: center;
+  font-size: 200px;
+
+  /*
+    이 요소를 화면 크기에 상관없이 중앙에 유지시키고 싶을 때
+    width값이 고정되어 있기 때문에, 화면이 width보다 작아지면 요소의 왼쪽 기준으로 남아있게 되는데,
+    화면이 width 보다 작아져도 중앙 부분이 남아서 보여지게 하자!
+  */
+  position: absolute;
+  top: 40px;
+  left: 50%; /* 부모 사이즈의 왼쪽에서 오른쪽으로 50%만큼 시작 위치를 밀어낸 다음*/
+  margin-left: calc(
+    (819px * 3 + 20px) / -2
+  ); /*요소의 절반 사이즈만큼 다시 왼쪽으로 땡기자*/
+}
