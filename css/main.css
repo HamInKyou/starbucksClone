@@ -435,9 +435,6 @@ header .badges .badge {
   /*.swiper-slide 세개 보이고, 사이 10px씩 벌어진다 했을 때 총 container의 너비 계산*/
   width: calc(819px * 3 + 20px);
   height: 553px;
-  background-color: orange;
-  text-align: center;
-  font-size: 200px;
 
   /*
     이 요소를 화면 크기에 상관없이 중앙에 유지시키고 싶을 때
@@ -450,4 +447,84 @@ header .badges .badge {
   margin-left: calc(
     (819px * 3 + 20px) / -2
   ); /*요소의 절반 사이즈만큼 다시 왼쪽으로 땡기자*/
+}
+
+.notice .promotion .swiper-slide {
+  opacity: 0.5;
+  transition: opacity 1s;
+  position: relative;
+}
+
+.notice .promotion .swiper-slide-active {
+  /*현재 차례인 애들 .swiper-slide 외에 .swiper-slide-active 클래스가 추가로 붙는다!*/
+  opacity: 1;
+}
+
+.notice .promotion .swiper-slide .btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.notice .promotion .swiper-pagination {
+  /*슬라이드 페이지네이션하는 부분*/
+  bottom: 40px;
+  left: 0;
+  right: 0;
+}
+.notice .promotion .swiper-pagination .swiper-pagination-bullet {
+  /*슬라이드 페이지네이션 각 점 요소들*/
+  background-color: transparent; /*원래 기본적으로 백그라운드 색깔 정의해놨는데, 이걸 의도에 맞게 투명하게*/
+  background-image: url("../images/promotion_slide_pager.png");
+  width: 12px;
+  height: 12px;
+  outline: none; /*input Tag처럼 클릭했을 때 테두리 파란색으로 뜰 수 있는데, 이거 방지*/
+}
+
+.notice
+  .promotion
+  .swiper-pagination
+  .swiper-pagination-bullet
+  + .swiper-pagination-bullet {
+  /*슬라이드 페이지네이션 사이에 여백 주기 위해서*/
+  margin-left: 6px;
+}
+
+.notice .promotion .swiper-pagination .swiper-pagination-bullet-active {
+  /*페이지네이션 클릭했을 때 상태 (현재 활성화 되어있는 페이지)*/
+  background-image: url("../images/promotion_slide_pager_on.png");
+}
+
+.notice .promotion .swiper-prev,
+.notice .promotion .swiper-next {
+  /*위 두개의 선택자에다 똑같은 CSS 적용시켜주기*/
+  width: 42px;
+  height: 42px;
+  border: 2px solid #333333;
+  border-radius: 50%;
+  position: absolute;
+  top: 300px;
+  z-index: 1;
+  cursor: pointer;
+  outline: none; /*input Tag처럼 클릭했을 때 테두리 파란색으로 뜰 수 있는데, 이거 방지*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+.notice .promotion .swiper-prev {
+  left: 50%;
+  margin-left: -480px;
+}
+.notice .promotion .swiper-next {
+  right: 50%;
+  margin-right: -480px;
+}
+
+.notice .promotion .swiper-prev:hover,
+.notice .promotion .swiper-next:hover {
+  background-color: #333333;
+  color: #ffffff;
 }

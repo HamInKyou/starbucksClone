@@ -73,3 +73,23 @@ new Swiper(".notice-line .swiper-container", {
   autoplay: true,
   loop: true,
 });
+
+new Swiper(".promotion .swiper-container", {
+  //direction: "horizontal", 이건 기본값이니 안써도 됨
+  slidesPerView: 3, //한번에 세 슬라이드 보이게
+  spaceBetwwn: 10, //슬라이드 사이 여백
+  centeredSlides: true, //젤 첫번째 슬라이드가 왼쪽 끝에 나오는게 아니라 중앙부터 시작하게!
+  loop: true, //끝이 안나고 반복적으로 다시 첨으로 들어가게
+  autoplay: {
+    delay: 5000, //기본값은 3000
+  },
+  pagination: {
+    el: ".promotion .swiper-pagination", //페이지 번호 요소 선택자
+    clickable: true, // 사용자가 페이지 번호 요소로 슬라이드 제어 가능한지
+  },
+  navigation: {
+    //슬라이드 좌우로 이동하는 버튼에 대한 명시
+    prevEl: ".promotion .swiper-prev", //왼쪽 버튼 요소 선택자
+    nextEl: ".promotion .swiper-next", //오른쪽 버튼 요소 선택자
+  },
+});
