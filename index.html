@@ -78,6 +78,9 @@
     <!--SWIPER -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!--YOUTUBE 연결하기 위해 만든 스크립트파일-->
+    <script defer src="./js/youtube.js"></script>
     <script defer src="./js/main.js"></script>
   </head>
   <body>
@@ -562,6 +565,16 @@
           <div class="btn gift">e-Gift 선물하기</div>
         </div>
       </div>
+    </section>
+
+    <!-- YOUTUBE VIDEO -->
+    <section class="youtube">
+      <!--실제 영상이 나올 영역-->
+      <div class="youtube__area">
+        <div id="player"></div>
+      </div>
+      <!-- youtube section 위로 덮을 커버부분-->
+      <div class="youtube__cover"></div>
     </section>
   </body>
 </html>

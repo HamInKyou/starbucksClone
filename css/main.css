@@ -584,3 +584,57 @@ header .badges .badge {
   margin-top: 10px;
   flex-grow: 1; /*현재 줄에서 최대한의 너비를 사용해라*/
 }
+
+/* YOUTUBE VIDEO */
+.youtube {
+  position: relative;
+  height: 700px; /* 영상 제한적으로 높이 700px 정도만 보이게*/
+  background-color: #333333;
+  /* 
+  부모요소 넘어가는 부분 자르기
+  - 영상의 사이즈는 1920 x 1080 사이즈인데,
+  - 영상의 비율 맞추면서 높이 700px 정도만 보이고 싶다!
+  */
+  overflow: hidden;
+}
+
+.youtube .youtube__area {
+  width: 1920px;
+  /*영상이 나오는 위치를 부모요소의 정 중앙에 잡기 위해*/
+  position: absolute;
+  /* 가로 정중앙 잡기 */
+  left: 50%;
+  margin-left: calc(1920px / -2);
+  /* 세로 정중앙 잡기 */
+  /* 세로 사이즈는 1920px을 16:9 비율로 맞춘 세로 */
+  /* 아래로 50%정도 내려갔다가 세로사이즈의 50%만큼 다시 땡긴다*/
+  top: 50%;
+  margin-top: calc(1920px * 9 / 16 / -2);
+}
+
+.youtube .youtube__area::before {
+  /* 스타일 작업을 위해서 필요한 요소, CSS에서 처리하기 위해 가상요소 선택자 사용!*/
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%;
+}
+
+.youtube .youtube__cover {
+  background-image: url("../images/video_cover_pattern.png");
+  background-color: rgva(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.youtube__area #player {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
