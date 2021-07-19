@@ -73,6 +73,40 @@ a {
   color: #333333;
   background-color: #ffffff;
 }
+
+.back-to-position {
+  /* 
+    초기상태 - 투명
+    이후 상태변화 1초동안 진행 
+  */
+  opacity: 0;
+  transition: 1s;
+}
+.back-to-position.to-right {
+  /* 왼쪽에서 오른쪽으로 나타나는 애니메이션 */
+  transform: translateX(-150px); /* x축 왼쪽으로 150px 이동시켜준다.*/
+}
+.back-to-position.to-left {
+  /* 오른쪽에서 왼쪽으로 나타나는 애니메이션 */
+  transform: translateX(150px); /* x축 오른쪽으로 150px 이동시켜준다.*/
+}
+.show .back-to-position {
+  /* show 라는 클래스가 붙으면 투명했던게 보이면서 원래 위치로 돌아오게 */
+  opacity: 1;
+  transform: translateX(0);
+}
+.show .back-to-position.delay-0 {
+  transition-delay: 0s;
+}
+.show .back-to-position.delay-1 {
+  transition-delay: 0.3s;
+}
+.show .back-to-position.delay-2 {
+  transition-delay: 0.6s;
+}
+.show .back-to-position.delay-3 {
+  transition-delay: 0.9s;
+}
 /* HEADER */
 header {
   background-color: #f6f5f0;

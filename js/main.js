@@ -129,3 +129,17 @@ function floatingObject(selector, delay, size) {
 floatingObject(".floating1", 1, 15);
 floatingObject(".floating2", 0.5, 15);
 floatingObject(".floating3", 1.5, 20);
+
+const spyEls = document.querySelectorAll("section.scroll-spy");
+spyEls.forEach((spyEl) => {
+  //.scene : 특정한 요소를 감시하는 옵션을 지정하는 메소드
+  //setClassToggle : 클래스 있으면 빼고 없으면 추가하고
+  //addTo : ScrollMagic 라이브러리에 필요한 컨트롤러라는 개념을 추가하기 위해 사용해야하는 메소드
+  new ScrollMagic.Scene({
+    triggerElement: spyEl, // 보여짐 여부를 감시할 요소를 지정
+    //화면이 시작하는 부분을 0%, 끝나는 부분을 100%라고 했을 때
+    triggerHook: 0.8, // 화면의 80% 지점에서 걸렸을 때 체이닝된 다음 메소드가 실행되게!
+  })
+    .setClassToggle(spyEl, "show") //show라는 클래스가 spyEl에 없으면 추가하고, 있으면 제외하기!
+    .addTo(new ScrollMagic.Controller()); //Scene에 할당한 옵션들을 컨트롤러에 할당해서 실제로 동작할 수 있도록 해준다! (필수!)
+});
