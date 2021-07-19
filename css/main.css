@@ -5,7 +5,6 @@ body {
   font-weight: 400; /*기본 폰트 두께*/
   line-height: 1.4; /*통상적인 줄높이, 글꼴마다 다르다.*/
   font-family: "Nanum Gothic", sans-serif;
-  height: 3000px;
 }
 img {
   /*
@@ -654,8 +653,34 @@ header .badges .badge {
   top: 350px;
   left: 150px;
 }
-.youtube .floating3 {
+
+/* SEASON PRODUCT */
+.season-product {
+  background-image: url("../images//season_product_bg.jpg");
+}
+
+.season-product .inner {
+  height: 400px;
+}
+
+.season-product .floating3 {
   position: absolute;
-  bottom: -200px;
+  top: -200px;
   right: 0;
+}
+.season-product .text-group {
+  position: absolute;
+  top: 110px;
+  right: 100px;
+}
+
+.season-product .text-group .title {
+  margin-bottom: 10px;
+}
+
+.season-product .text-group .description {
+  margin-bottom: 15px;
+}
+
+.season-product .text-group .more {
 }
