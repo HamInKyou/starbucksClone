@@ -67,7 +67,7 @@ a {
 }
 .btn.btn--white {
   color: #ffffff;
-  background-color: #ffffff;
+  border-color: #ffffff;
 }
 .btn.btn--white:hover {
   color: #333333;
@@ -708,4 +708,33 @@ header .badges .badge {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+/* PICK YOUR FACORITE*/
+.pick-your-favorite {
+  background-image: url("../images//favorite_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed; /*백그라운드가 요소따라서 같이 스크롤되지 않게!*/
+  background-size: cover;
+}
+
+.pick-your-favorite .inner {
+  padding: 110px 0;
+}
+
+.pick-your-favorite .text-group {
+  margin-left: 100px;
+  width: 362px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.pick-your-favorite .text-group .title {
+  margin-bottom: 40px;
+}
+
+.pick-your-favorite .text-group .description {
+  margin-bottom: 40px;
 }
