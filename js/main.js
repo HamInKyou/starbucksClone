@@ -143,3 +143,16 @@ spyEls.forEach((spyEl) => {
     .setClassToggle(spyEl, "show") //show라는 클래스가 spyEl에 없으면 추가하고, 있으면 제외하기!
     .addTo(new ScrollMagic.Controller()); //Scene에 할당한 옵션들을 컨트롤러에 할당해서 실제로 동작할 수 있도록 해준다! (필수!)
 });
+
+new Swiper(".awards .swiper-container", {
+  //direction: "horizontal", 이건 기본값이니 안써도 됨
+  autoplay: true,
+  loop: true,
+  spaceBetwwn: 30, //슬라이드 사이 여백
+  slidesPerView: 5, //한번에 다섯개의 슬라이드 보이게
+  navigation: {
+    //슬라이드 좌우로 이동하는 버튼에 대한 명시
+    prevEl: ".awards .swiper-prev", //왼쪽 버튼 요소 선택자
+    nextEl: ".awards .swiper-next", //오른쪽 버튼 요소 선택자
+  },
+});
