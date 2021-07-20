@@ -49,15 +49,34 @@ window.addEventListener(
         opacity: 0, //gsap을 통해 배지를 숨기긴 했지만, 보이지만 않을 뿐 영역은 차지하고 있음..
         display: "none", //
       });
+      //버튼 보이기
+      //요소를 querySelector 통해 갖고와서 쓸 수도 있지만,
+      //선택자 자체를 명시해서 갖고와서 쓸 수 있다는 것을 알 수 있다!
+      //그래도 차피 찾아놓으면 여러번 쓸 수 있으니까 그냥 querySelector로 갖고와서 쓰는 것을 추천.
+      gsap.to("#to-top", 0.2, {
+        x: 0,
+      });
     } else {
       //배지 보이기
       gsap.to(badgeEl, 0.6, {
         opacity: 1,
         display: "block",
       });
+      //버튼 숨기기
+      gsap.to("#to-top", 0.2, {
+        x: 100,
+      });
     }
   }, 300)
 );
+
+const toTopEl = document.querySelector("#to-top");
+toTopEl.addEventListener("click", () => {
+  //window객체는 화면에 출력되고 있는 그 화면에 대한 객체
+  gsap.to(window, 0.7, {
+    scrollTo: 0, //스크롤의 위치를 0px 위치(맨 위)로 옮겨주겠다!
+  });
+});
 
 const fadeEls = document.querySelectorAll(".visual .fade-in");
 fadeEls.forEach((fadeEl, index) => {
